@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  cupsd:
+    image: therliss/cupsd-tmt20:latest
+    container_name: cupsd
+    ports:
+      - "631:631"
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - ./etc/cups:/etc/cups
+    restart: always
